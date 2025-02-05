@@ -9,3 +9,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+const appInsights = require('applicationinsights');
+appInsights.setup('YOUR-INSTRUMENTATION-KEY').start(); // Replace with your key
