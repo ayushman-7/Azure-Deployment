@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Run Tests
-        run: npm test  # Ensure your project has test scripts
+        run: npm test  
 
       - name: Zip the Application
         run: zip -r node_app.zip .
@@ -29,6 +29,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "my-azure-node-app"
+          app-name: "node-app"
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: node_app.zip
